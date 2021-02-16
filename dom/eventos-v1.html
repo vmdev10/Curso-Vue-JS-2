@@ -1,0 +1,20 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="challenge">
+    <p>{{ contador }}</p>
+    <button v-on:click="somar">Add 1</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#challenge',
+        data: {
+            contador: 0
+        },
+        methods: {
+            somar() {
+                this.contador++
+            }
+        }
+    })
+</script>
