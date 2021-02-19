@@ -1,0 +1,44 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{ counter }}</p>
+  <button v-on:click="add(5)">Add</button>
+  <p v-on:mousemove="coordinates">
+    Mouse: {{ x }} e {{ y }}
+    <span v-on:mousemove="stopHere">PARAR AQUI!!!</span>
+  </p>
+  <p v-on:mousemove="coordinates">
+    Mouse: {{ x }} e {{ y }}
+    <!-- Usando os modificadores de evento -->
+    <span v-on:mousemove.stop="">PARAR AQUI!!!</span>
+  </p>
+  <a v-on:click.prevent="" v-bind:href="link">GOOGLE</a>
+  <a v-on:click="dontBrowser" v-bind:href="link">GOOGLE</a>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      counter: 0,
+      x: 0,
+      y: 0,
+      link: "https://www.google.com.br",
+    },
+    methods: {
+      add(step) {
+        this.counter += step;
+      },
+      coordinates(event) {
+        this.x = event.clientX;
+        this.y = event.clientY;
+      },
+      stopHere(event) {
+        event.stopPropagation();
+      },
+      dontBrowser(event) {
+        event.preventDefault();
+      },
+    },
+  });
+</script>
