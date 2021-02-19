@@ -4,20 +4,19 @@
 
     Quando eventos são gerados na View, pelo v-bind, os dados não são alterados na Vue instance.
     Para isso é necessário usar o conceito de TWO-WAY-BINDING
-    v-model garante a atualização dupla sem precisar usar o v-bind e o v-on 
+    v-model garante a atualização dupla sem precisar usar o v-bind e o   v-on 
 -->
 <div id="app">
-    <p>{{ title }}</p>
-    <!-- <input type="text" v-bind:value='title'  v-on:input="title = $event.target.value"> -->
-    <input type="text" v-model="title">
-
+  <p>{{ title }}</p>
+  <!-- <input type="text" v-bind:value='title'  v-on:input="title = $event.target.value"> -->
+  <input type="text" v-model="title" />
 </div>
 
 <script>
-    new Vue({
-        el: '#app',
-        data: {
-            title: 'Usando VueJS'
-        },
-    })
+  new Vue({
+    el: "#app",
+    data: {
+      title: "Usando VueJS",
+    },
+  });
 </script>
