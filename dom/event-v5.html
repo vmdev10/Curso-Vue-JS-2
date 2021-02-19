@@ -1,0 +1,49 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- 
+    MODIFICADORES DE TECLADO
+        DISPARAR O EVENTO QUANDO DETERMINADA TECLA FOR PRESSIONADA
+ -->
+<div id="app">
+  <p>{{ counter }}</p>
+  <button v-on:click="add">Add</button>
+  <p v-on:mousemove="coordinates">
+    Mouse: {{ x }} e {{ y }}
+    <span v-on:mousemove.stop="">PARAR AQUI!!!!</span>
+  </p>
+  <a v-bind:href="link">GOOGLE</a>
+  <a v-on:click.prevent="" v-bind:href="link">GOOGLE</a>
+  <hr />
+  <!-- <input v-on:keyup="alert" type="text"> -->
+  <!-- <input v-on:keyup.enter="alertEnter" type="text"> -->
+  <input v-on:keyup.enter.alt="alertEnterAndAlt" type="text" />
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      counter: 0,
+      x: 0,
+      y: 0,
+      link: "http://google.com.br",
+    },
+    methods: {
+      add() {
+        this.counter++;
+      },
+      coordinates(event) {
+        this.x = event.clientX;
+        this.y = event.clientY;
+      },
+      alert() {
+        alert("Sua tecla foi pressionada!");
+      },
+      alertEnter() {
+        alert("Sua tecla ENTER foi pressionada");
+      },
+      alertEnterAndAlt() {
+        alert("Sua tecla ENTER + ALT foi pressionada");
+      },
+    },
+  });
+</script>
