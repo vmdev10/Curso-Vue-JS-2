@@ -8,9 +8,13 @@
 
   <!-- 2) Escute o evento "keydown" e armazene o valor na propriedade
         data (dica: event.target.value) -->
-  <div>
+  <!-- <div>
     <input v-on:keydown="keydownValue" type="text" />
     <p>{{ value }}</p>
+  </div> -->
+  <div>
+    <input type="text" v-on:keydown="value2 = $event.target.value" />
+    <p>{{ value2 }}</p>
   </div>
 
   <!-- 3) Ajuste o exemplo 2 para disparar o evento "keydown" somente
