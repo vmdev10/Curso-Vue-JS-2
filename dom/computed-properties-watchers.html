@@ -1,0 +1,26 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="example">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+
+<script>
+    let vm = new Vue ({
+        el: '#example',
+        data: {
+            message: 'Hello'
+        },
+        computed: {
+            // a computed getter
+            reversedMessage() {
+                // `this` aponta para a instância vm
+                return this.message.split('').reverse().join('')
+            }
+        }
+    })
+
+    console.log(vm.reversedMessage)
+    vm.message = 'goodbye'
+    console.log(vm.reversedMessage)
+</script>
