@@ -1,0 +1,69 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<style>
+    .box {
+        display: flex;
+        justify-content: space-around;
+    }
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+    .c1 {
+        background-color: red;
+    }
+    .c2 {
+        background-color: green;
+    }
+    .c3 {
+        background-color: blue;
+    }
+    .rotate {
+        transform: rotate(45deg);
+    }
+</style>
+
+<div id="app">
+   <div class="box">
+    <div 
+        class="demo"
+        :class="['c3', 'rotate']"
+        @click="applyC1 = !applyC1"
+    >
+    </div>
+    <div
+        class="demo"
+        :class="['c2', {rotate: applyRotate}]"
+    >
+    </div>
+    <div 
+        class="demo"
+        :class="[classCss, style]"
+    >
+    </div>
+    </div>
+    <hr>
+    <input type="text" v-model="classCss">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            applyC1: false,
+            classCss: 'c1',
+            style: 'rotate',
+            applyRotate: true
+        },
+        // Caso sejam definidas várias classes, é viável usar a propriedade computada
+        computed: {
+            style1 () {
+                return {
+                    c1: this.applyC1,
+                    c2: !this.applyC1
+                }
+            }
+        }
+    })
+</script>
