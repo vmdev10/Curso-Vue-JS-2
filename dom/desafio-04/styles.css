@@ -13,3 +13,31 @@
 	background-color: gray;
 	width: 50px !important;
 }
+
+.background {
+	background-color: black;
+}
+
+.color {
+	color: white;
+}
+
+.color1 {
+	background-color: #8d0c99;
+}
+.color2 {
+	background-color: #ff7b00;
+}
+.color3 {
+	background-color: #990c0c;
+}
+.success {
+	background-color: #28ff39;
+}
+.fail {
+	background-color: red;
+}
+.progress {
+	width: 50px;
+	color: #28ff39;
+}
