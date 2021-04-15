@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criando um componente global</title>
+
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+        <counter></counter>
+        <Counter></Counter>
+        <COUNTER></COUNTER>
+    </div>
+
+    <script>
+        // Criando um componente de forma global
+        Vue.component('counter', {
+            template: `
+                <div>
+                    <h1>{{ counter }}</h1>
+                    <button @click="counter++">+</button>
+                    <button @click="counter--">-</button>    
+                </div>
+            `,
+            data() {
+                return {
+                    counter: 0
+                }
+            }
+        })
+
+      new Vue({
+        el: "#app",
+      });
+    </script>
+
+  </body>
+</html>
