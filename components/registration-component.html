@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criando um componente Local</title>
+
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app1">
+      <counter1></counter1>
+      <counter1></counter1>
+      <counter1></counter1>
+    </div>
+    <hr>
+    <div id="app2">
+      <counter2></counter2>
+      <counter2></counter2>
+      <counter2></counter2>
+    </div>
+       
+    <script>
+      //  Criando um componente local => Fica disponível apenas para uma instância Vue
+      const counter = {
+        template: `
+          <div>
+            <h1>{{ counter }}</h1>
+            <button @click="counter++">+</button>
+            <button @click="counter--">-</button>
+          </div>
+        `,
+        data() {
+          return {
+            counter: 0
+          }
+        }
+      }
+      
+      new Vue({
+        el: '#app1',
+        components: {
+          counter1: counter
+        }
+      })
+      new Vue({
+        el: '#app2',
+        components: {	
+          counter2: counter
+        }
+      })
+    </script>
+
+  </body>
+</html>
