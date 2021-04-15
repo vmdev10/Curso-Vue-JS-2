@@ -2,8 +2,6 @@
   <div>
     <h1>CONTADORES</h1>
     <h2>{{ counter }}</h2>
-    <button @click="counter++">+</button>
-    <button @click="counter--">-</button>
   </div>
 </template>
 
@@ -18,7 +16,5 @@ export default {
 </script>
 
 <style>
-  button {
-    margin-right: 10px;
-  }
+
 </style>
