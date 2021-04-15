@@ -22,7 +22,6 @@
     </div>
        
     <script>
-      //  Criando um componente local => Fica disponível apenas para uma instância Vue
       const counter = {
         template: `
           <div>
@@ -40,12 +39,14 @@
       
       new Vue({
         el: '#app1',
+        // Criando um componente local => Fica disponível apenas para esta instância Vue
         components: {
           counter1: counter
         }
       })
       new Vue({
         el: '#app2',
+        // Criando um componente local => Fica disponível apenas para esta instância Vue
         components: {	
           counter2: counter
         }
