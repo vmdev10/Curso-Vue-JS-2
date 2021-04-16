@@ -2,6 +2,7 @@
     <div class="counters">
         <h1>CONTADORES</h1>
         <app-counter v-for="n in 5" :key="n"/>
+        <button>?</button>
     </div>
 </template>
 
@@ -14,6 +15,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    /* div {
+        border: 1px solid red;
+    } */
 </style>
