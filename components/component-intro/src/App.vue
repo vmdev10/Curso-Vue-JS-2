@@ -1,17 +1,19 @@
 <template>
   <div>
     <h1>CONTADORES</h1>
-    <h2>{{ counter }}</h2>
+    <app-counter />
+    <app-counter />
+    <app-counter />
   </div>
 </template>
 
 <script>
+import Counter from './Counter.vue'
 export default {
-  data() {
-    return {
-      counter: 0
-    }
+  components: {
+    'app-counter': Counter
   }
+
 }
 </script>
 
