@@ -1,8 +1,7 @@
 <template>
     <div class="counters">
-        <app-counter />
-        <app-counter />
-        <app-counter />
+        <h1>CONTADORES</h1>
+        <app-counter v-for="n in 5" :key="n"/>
     </div>
 </template>
 

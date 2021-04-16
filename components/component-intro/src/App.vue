@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>CONTADORES</h1>
     <app-counters />
   </div>
 </template>
