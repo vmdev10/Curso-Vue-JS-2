@@ -2,10 +2,11 @@
     <div class="container">
         <h1>Componente Usuário</h1>
         <p>Esse é um componente muito legal!</p>
+        <p>Nome do usuário: {{ name }}</p>
         <button @click="changeName">Alterar Nome</button>
         <hr>
         <div class="componentes">
-            <app-usuario-info />
+            <app-usuario-info :userName="name" @changed-name="name = $event.newName + $event.oldName"/>
             <app-usuario-editar />
         </div>
     </div>

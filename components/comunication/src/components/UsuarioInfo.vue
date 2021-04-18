@@ -2,11 +2,13 @@
     <div class="componente">
         <h2>As Informações de Usuário</h2>
         <p>Nome do usuário: <strong>{{ reverseName() }}</strong> </p>
+        <button @click="resetName">Reiniciar Nome</button>
     </div>
 </template>
 
 <script>
 export default {
+    // Comunicação direta entre componentes
     // props: ['userName'],
     props: {
         userName: {
@@ -21,6 +23,15 @@ export default {
     methods: {
         reverseName() {
             return this.userName.split('').reverse().join('')
+        },
+        // Comunicação indireta entre componentes
+        resetName() {
+            const oldName = this.userName
+            const newName = 'Ana'
+            this.$emit('changed-name', {
+                newName,
+                oldName
+            })
         }
     }
 }
