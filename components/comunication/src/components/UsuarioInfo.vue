@@ -12,7 +12,10 @@ export default {
         userName: {
             type: String, // Definindo o tipo da propriedade que eu espero receber
             // required: true, // Definindo a propriedade 'userName' como obrigatória
-            default: 'Anônimo' // Definindo um valor padrão 'Anônimo', caso a propriedade não seja passada
+            default: 'Anônimo', // Definindo um valor padrão 'Anônimo', caso a propriedade não seja passada. Pode retornar uma função também, com uma lógica mais complexa.
+            // default: function() {
+            //     return Array(10).fill(0).join(',')
+            // }
         }
     },
     methods: {
