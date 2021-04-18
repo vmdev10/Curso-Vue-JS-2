@@ -7,7 +7,14 @@
 
 <script>
 export default {
-    props: ['userName'],
+    // props: ['userName'],
+    props: {
+        userName: {
+            type: String, // Definindo o tipo da propriedade que eu espero receber
+            // required: true, // Definindo a propriedade 'userName' como obrigatória
+            default: 'Anônimo' // Definindo um valor padrão 'Anônimo', caso a propriedade não seja passada
+        }
+    },
     methods: {
         reverseName() {
             return this.userName.split('').reverse().join('')
