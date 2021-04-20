@@ -2,6 +2,7 @@
     <div class="componente">
         <h2>As Informações de Usuário</h2>
         <p>Nome do usuário: <strong>{{ reverseName() }}</strong> </p>
+        <p>Idade do usuário {{ age }}</p>
         <button @click="resetName">Reiniciar Nome</button>
         <button @click="resetFn()">Reiniciar Nome (Callback)</button>
     </div>
@@ -20,6 +21,7 @@ export default {
             //     return Array(10).fill(0).join(',')
             // }
         },
+        age: {type: Number},
         resetFn: Function
     },
     methods: {
