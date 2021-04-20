@@ -13,7 +13,10 @@
         :resetFn="resetName"
         @changed-name="name = $event.newName + $event.oldName"
       />
-      <app-usuario-editar :age="age" @changed-age="age = $event + 1" />
+      <app-usuario-editar
+        :age="age"
+        :changeFn="changeAge"
+      />
     </div>
   </div>
 </template>
@@ -38,6 +41,9 @@ export default {
     resetName() {
       this.name = "Ana";
     },
+    changeAge() {
+      this.age = 18
+    }
   },
 };
 </script>

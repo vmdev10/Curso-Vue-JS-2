@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import eventBus from '../eventBus'
 export default {
     // Comunicação direta entre componentes
     // props: ['userName'],
@@ -37,6 +38,11 @@ export default {
                 oldName
             })
         }
+    },
+    created() {
+        eventBus.$on('changedAge', age => {
+            this.age = age
+        })
     }
 }
 </script>
