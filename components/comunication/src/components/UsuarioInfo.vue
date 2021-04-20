@@ -3,6 +3,7 @@
         <h2>As Informações de Usuário</h2>
         <p>Nome do usuário: <strong>{{ reverseName() }}</strong> </p>
         <button @click="resetName">Reiniciar Nome</button>
+        <button @click="resetFn()">Reiniciar Nome (Callback)</button>
     </div>
 </template>
 
@@ -18,7 +19,8 @@ export default {
             // default: function() {
             //     return Array(10).fill(0).join(',')
             // }
-        }
+        },
+        resetFn: Function
     },
     methods: {
         reverseName() {
