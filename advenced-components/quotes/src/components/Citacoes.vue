@@ -15,6 +15,12 @@
 <script>
 import Citacao from "./Citacao";
 export default {
+  created() {
+    console.log("Created");
+  },
+  destroyed() {
+    console.log("Destroyed");
+  },
   components: { Citacao },
   data() {
     return {
@@ -57,6 +63,6 @@ export default {
 /* A estilização do conteúdo do slot é feita tanto pelo componente pai quanto pelo componente que está o slot */
 
 h1 {
-    color: #222;
+  color: #222;
 }
 </style>
