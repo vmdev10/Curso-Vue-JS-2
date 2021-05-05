@@ -17,4 +17,9 @@ export default {
         padding: 25px;
         max-width: 450px;
     }
+
+    /* A estilização do conteúdo do slot é feita tanto pelo componente pai quanto pelo componente que está o slot */
+    h1 {
+        color: red;
+    }
 </style>

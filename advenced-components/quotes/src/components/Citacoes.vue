@@ -5,8 +5,9 @@
       <button @click="numero++">&gt;</button>
     </span>
     <Citacao
-      >{{ citacoes[indice].fonte }} <br />
-      {{ citacoes[indice].texto }} <br />{{ citacoes[indice].autor }}
+      ><h1>{{ citacoes[indice].fonte }}</h1>
+      <p>{{ citacoes[indice].texto }}</p>
+      <h6>{{ citacoes[indice].autor }}</h6>
     </Citacao>
   </div>
 </template>
@@ -51,5 +52,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* A estilização do conteúdo do slot é feita tanto pelo componente pai quanto pelo componente que está o slot */
+
+h1 {
+    color: #222;
 }
 </style>
