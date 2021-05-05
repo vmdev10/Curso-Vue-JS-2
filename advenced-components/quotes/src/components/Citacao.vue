@@ -2,7 +2,6 @@
     <div class="citacao">
         <slot name="fonte"></slot>
         <slot></slot>
-        <slot></slot>
         <slot name="autor"></slot>
     </div>
 </template>

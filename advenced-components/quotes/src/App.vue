@@ -1,7 +1,10 @@
 <template>
 	<div id="app">
-		<Citacoes />
-		<Sobre />
+		<span>
+			<button @click="toggleComponents='Citacoes'">Citações</button>
+			<button @click="toggleComponents='Sobre'">Sobre</button>
+		</span>
+		<component :is="toggleComponents" />
 	</div>
 </template>
 
@@ -10,7 +13,12 @@ import Citacoes from './components/Citacoes'
 import Sobre from './components/Sobre'
 
 export default {
-	components: { Citacoes, Sobre }
+	components: {Citacoes, Sobre},
+	data() {
+		return {
+			toggleComponents: 'Citacoes'
+		}
+	}
 }
 </script>
 
