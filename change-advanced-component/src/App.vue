@@ -6,7 +6,7 @@
 			<button @click="component='Azul'" class="azul">Carregar Componente Azul</button>
 		</span>
 		<component :is="component">
-			<p>Este conteúdo vai para o {{component}}</p>
+			<p slot="content">Este conteúdo vai para o {{component}}</p>
 		</component>
 	</div>
 </template>
