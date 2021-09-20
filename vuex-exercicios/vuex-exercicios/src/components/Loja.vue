@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -20,6 +21,8 @@ export default {
     };
   },
   methods: {
+    //   A referênia à mapMutations é feita dentro de methods, diferente de mapGetters que é em computed
+    ...mapMutations(["adicionarProduto"]),
     adicionar() {
       const produto = {
         id: this.sequencia,
@@ -29,8 +32,14 @@ export default {
       };
       this.sequencia++;
 
-      // Adicionando um produto na store
-      this.$store.state.produtos.push(produto);
+      // Alterando um dado na store diretamente
+      //   this.$store.state.produtos.push(produto);
+
+      // Alterando um dado na store através de uma mutation - opção 1
+      //   this.$store.commit("adicionarProduto", produto);
+
+      // Opção 2
+      this.adicionarProduto(produto);
     },
   },
 };

@@ -28,14 +28,12 @@
 <script>
 export default {
   computed: {
+    //   Lendo um dado da Store.getters
     total() {
-      return this.produtos
-        .map((p) => p.quantidade * p.preco)
-        .reduce((total, atual) => total + atual, 0);
+      return this.$store.getters.valorTotal;
     },
 
-    // Lendo um dado da Store
-
+    // Lendo um dado da Store.state
     produtos() {
       return this.$store.state.produtos;
     },
